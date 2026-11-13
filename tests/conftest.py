@@ -26,7 +26,7 @@ def client():
             db.close()
 
     app.dependency_overrides[get_db] = override_get_db
-    yield TestClient(app)  # no `with`: lifespan (real DB) is not started
+    yield TestClient(app) 
     app.dependency_overrides.clear()
     Base.metadata.drop_all(engine)
 

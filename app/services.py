@@ -1,5 +1,3 @@
-"""Business logic. Routers stay thin; every rule of the platform lives here."""
-
 from fastapi import HTTPException
 from sqlalchemy import func, select
 from sqlalchemy.exc import IntegrityError
@@ -26,7 +24,6 @@ def _err(status: int, message: str) -> HTTPException:
 
 
 def _commit(db: Session, conflict_message: str):
-    """Commit; a violated DB unique constraint (e.g. a race) becomes 409."""
     try:
         db.commit()
     except IntegrityError:
@@ -34,7 +31,6 @@ def _commit(db: Session, conflict_message: str):
         raise _err(409, conflict_message)
 
 
-# ------------------------------------------------------------------ auth
 def register_user(db: Session, data: schemas.RegisterIn) -> User:
     email = data.email.lower()
     if db.scalar(select(User.id).where(User.email == email)):
@@ -61,7 +57,6 @@ def login_user(db: Session, data: schemas.LoginIn) -> dict:
     }
 
 
-# ------------------------------------------------------------ hackathons
 def get_hackathon(db: Session, hackathon_id: int) -> Hackathon:
     hackathon = db.get(Hackathon, hackathon_id)
     if hackathon is None:
@@ -92,7 +87,6 @@ def list_hackathons(
 
 
 def create_hackathon(db: Session, data: schemas.HackathonCreate, organizer: User) -> Hackathon:
-    # organizer_id always comes from the token, never from the request body
     hackathon = Hackathon(**data.model_dump(), organizer_id=organizer.id)
     db.add(hackathon)
     db.commit()
@@ -188,7 +182,6 @@ def leaderboard(db: Session, hackathon_id: int) -> dict:
                 "status": "REVIEWED",
             }
         )
-    # Teams without any review are listed at the end instead of being hidden.
     for tid, name, _, _ in sorted((r for r in rows if r[3] == 0), key=lambda r: r[1]):
         entries.append(
             {

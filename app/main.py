@@ -12,7 +12,7 @@ from .routers import auth, hackathons, projects, teams
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    Base.metadata.create_all(bind=engine)  # creates tables on first start
+    Base.metadata.create_all(bind=engine)  
     yield
 
 
@@ -36,7 +36,6 @@ def health():
     return {"status": "ok"}
 
 
-# ---- unified error format: {"success": false, "message": ..., "statusCode": ...} ----
 @app.exception_handler(StarletteHTTPException)
 async def http_error_handler(request: Request, exc: StarletteHTTPException):
     return JSONResponse(

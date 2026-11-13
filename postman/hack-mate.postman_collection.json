@@ -20,13 +20,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/register",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "register"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register"]
             },
             "body": {
               "mode": "raw",
@@ -74,13 +69,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/register",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "register"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register"]
             },
             "body": {
               "mode": "raw",
@@ -128,13 +118,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/register",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "register"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register"]
             },
             "body": {
               "mode": "raw",
@@ -182,13 +167,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/register",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "register"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register"]
             },
             "body": {
               "mode": "raw",
@@ -236,13 +216,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/register",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "register"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register"]
             },
             "body": {
               "mode": "raw",
@@ -290,13 +265,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/register",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "register"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register"]
             },
             "body": {
               "mode": "raw",
@@ -332,13 +302,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/register",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "register"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register"]
             },
             "body": {
               "mode": "raw",
@@ -375,13 +340,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/login",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "login"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
             },
             "body": {
               "mode": "raw",
@@ -421,13 +381,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/login",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "login"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
             },
             "body": {
               "mode": "raw",
@@ -467,13 +422,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/login",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "login"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
             },
             "body": {
               "mode": "raw",
@@ -513,13 +463,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/login",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "login"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
             },
             "body": {
               "mode": "raw",
@@ -559,13 +504,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/login",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "login"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
             },
             "body": {
               "mode": "raw",
@@ -605,13 +545,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/auth/login",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "auth",
-                "login"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
             },
             "body": {
               "mode": "raw",
@@ -652,12 +587,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons"]
             },
             "body": {
               "mode": "raw",
@@ -707,12 +638,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons"]
             },
             "body": {
               "mode": "raw",
@@ -758,12 +685,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons"]
             },
             "body": {
               "mode": "raw",
@@ -809,12 +732,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons"]
             },
             "body": {
               "mode": "raw",
@@ -845,12 +764,8 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/hackathons?page=1&limit=10&status=UPCOMING",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons"
-              ],
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons"],
               "query": [
                 {
                   "key": "page",
@@ -887,13 +802,8 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}"]
             }
           },
           "event": [
@@ -916,13 +826,8 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/hackathons/999999",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "999999"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "999999"]
             }
           },
           "event": [
@@ -949,13 +854,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}"]
             },
             "body": {
               "mode": "raw",
@@ -1002,13 +902,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}"]
             },
             "body": {
               "mode": "raw",
@@ -1054,14 +949,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/judges",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}",
-                "judges"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}", "judges"]
             },
             "body": {
               "mode": "raw",
@@ -1107,14 +996,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/judges",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}",
-                "judges"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}", "judges"]
             },
             "body": {
               "mode": "raw",
@@ -1160,14 +1043,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/judges",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}",
-                "judges"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}", "judges"]
             },
             "body": {
               "mode": "raw",
@@ -1218,14 +1095,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/teams",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}",
-                "teams"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}", "teams"]
             },
             "body": {
               "mode": "raw",
@@ -1274,14 +1145,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons/999999/teams",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "999999",
-                "teams"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "999999", "teams"]
             },
             "body": {
               "mode": "raw",
@@ -1327,14 +1192,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/teams",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}",
-                "teams"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}", "teams"]
             },
             "body": {
               "mode": "raw",
@@ -1375,14 +1234,8 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/teams",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}",
-                "teams"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}", "teams"]
             }
           },
           "event": [
@@ -1410,14 +1263,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/teams/{{team1Id}}/members",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "teams",
-                "{{team1Id}}",
-                "members"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["teams", "{{team1Id}}", "members"]
             },
             "body": {
               "mode": "raw",
@@ -1464,14 +1311,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/teams/{{team1Id}}/members",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "teams",
-                "{{team1Id}}",
-                "members"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["teams", "{{team1Id}}", "members"]
             },
             "body": {
               "mode": "raw",
@@ -1518,14 +1359,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/teams/{{team1Id}}/members",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "teams",
-                "{{team1Id}}",
-                "members"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["teams", "{{team1Id}}", "members"]
             },
             "body": {
               "mode": "raw",
@@ -1566,15 +1401,8 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/teams/{{team1Id}}/members/{{p2Id}}",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "teams",
-                "{{team1Id}}",
-                "members",
-                "{{p2Id}}"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["teams", "{{team1Id}}", "members", "{{p2Id}}"]
             },
             "auth": {
               "type": "bearer",
@@ -1606,15 +1434,8 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/teams/{{team1Id}}/members/{{p2Id}}",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "teams",
-                "{{team1Id}}",
-                "members",
-                "{{p2Id}}"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["teams", "{{team1Id}}", "members", "{{p2Id}}"]
             },
             "auth": {
               "type": "bearer",
@@ -1651,14 +1472,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/teams",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}",
-                "teams"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}", "teams"]
             },
             "body": {
               "mode": "raw",
@@ -1710,14 +1525,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/teams/{{team1Id}}/project",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "teams",
-                "{{team1Id}}",
-                "project"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["teams", "{{team1Id}}", "project"]
             },
             "body": {
               "mode": "raw",
@@ -1764,14 +1573,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/teams/{{team1Id}}/project",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "teams",
-                "{{team1Id}}",
-                "project"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["teams", "{{team1Id}}", "project"]
             },
             "body": {
               "mode": "raw",
@@ -1818,14 +1621,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/teams/{{team1Id}}/project",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "teams",
-                "{{team1Id}}",
-                "project"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["teams", "{{team1Id}}", "project"]
             },
             "body": {
               "mode": "raw",
@@ -1871,14 +1668,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/teams/{{team1Id}}/project",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "teams",
-                "{{team1Id}}",
-                "project"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["teams", "{{team1Id}}", "project"]
             },
             "body": {
               "mode": "raw",
@@ -1924,14 +1715,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/teams/{{team2Id}}/project",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "teams",
-                "{{team2Id}}",
-                "project"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["teams", "{{team2Id}}", "project"]
             },
             "body": {
               "mode": "raw",
@@ -1973,14 +1758,8 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/projects/{{project1Id}}/reviews",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "projects",
-                "{{project1Id}}",
-                "reviews"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["projects", "{{project1Id}}", "reviews"]
             }
           },
           "event": [
@@ -2013,14 +1792,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/projects/{{project1Id}}/reviews",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "projects",
-                "{{project1Id}}",
-                "reviews"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["projects", "{{project1Id}}", "reviews"]
             },
             "body": {
               "mode": "raw",
@@ -2066,14 +1839,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/projects/{{project1Id}}/reviews",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "projects",
-                "{{project1Id}}",
-                "reviews"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["projects", "{{project1Id}}", "reviews"]
             },
             "body": {
               "mode": "raw",
@@ -2119,14 +1886,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/projects/{{project1Id}}/reviews",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "projects",
-                "{{project1Id}}",
-                "reviews"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["projects", "{{project1Id}}", "reviews"]
             },
             "body": {
               "mode": "raw",
@@ -2172,14 +1933,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/projects/{{project2Id}}/reviews",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "projects",
-                "{{project2Id}}",
-                "reviews"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["projects", "{{project2Id}}", "reviews"]
             },
             "body": {
               "mode": "raw",
@@ -2225,14 +1980,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/projects/999999/reviews",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "projects",
-                "999999",
-                "reviews"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["projects", "999999", "reviews"]
             },
             "body": {
               "mode": "raw",
@@ -2278,14 +2027,8 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/projects/{{project2Id}}/reviews",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "projects",
-                "{{project2Id}}",
-                "reviews"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["projects", "{{project2Id}}", "reviews"]
             },
             "body": {
               "mode": "raw",
@@ -2326,14 +2069,8 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/projects/{{project1Id}}/reviews",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "projects",
-                "{{project1Id}}",
-                "reviews"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["projects", "{{project1Id}}", "reviews"]
             }
           },
           "event": [
@@ -2357,14 +2094,8 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/leaderboard",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}",
-                "leaderboard"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}", "leaderboard"]
             }
           },
           "event": [
@@ -2393,13 +2124,8 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}"]
             },
             "auth": {
               "type": "bearer",
@@ -2431,13 +2157,8 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}"]
             },
             "auth": {
               "type": "bearer",
@@ -2469,13 +2190,8 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/hackathons/{{hackathonId}}",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "hackathons",
-                "{{hackathonId}}"
-              ]
+              "host": ["{{baseUrl}}"],
+              "path": ["hackathons", "{{hackathonId}}"]
             }
           },
           "event": [
