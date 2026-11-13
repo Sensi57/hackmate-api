@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: hackmate-db
+    environment:
+      POSTGRES_USER: hackmate
+      POSTGRES_PASSWORD: hackmate
+      POSTGRES_DB: hackmate
+    ports:
+      - "5432:5432"
+    volumes:
+      - hackmate-data:/var/lib/postgresql/data
+
+volumes:
+  hackmate-data:

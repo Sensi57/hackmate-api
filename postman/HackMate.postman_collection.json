@@ -1,0 +1,2506 @@
+{
+  "info": {
+    "name": "HackMate API",
+    "description": "Run the whole collection in order with the Collection Runner. Tokens and ids are stored in collection variables automatically.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Authentication",
+      "item": [
+        {
+          "name": "Register Organizer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Olga Organizer\",\n  \"email\": \"{{orgEmail}}\",\n  \"password\": \"password123\",\n  \"role\": \"ORGANIZER\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set(\"orgEmail\", \"org\" + Date.now() + \"@example.com\");"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"password is not returned\", () => pm.expect(JSON.stringify(j)).to.not.include(\"password\"));",
+                  "pm.collectionVariables.set(\"orgId\", j.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Register Participant 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Alex Participant\",\n  \"email\": \"{{p1Email}}\",\n  \"password\": \"password123\",\n  \"role\": \"PARTICIPANT\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set(\"p1Email\", \"p1\" + Date.now() + \"@example.com\");"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"password is not returned\", () => pm.expect(JSON.stringify(j)).to.not.include(\"password\"));",
+                  "pm.collectionVariables.set(\"p1Id\", j.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Register Participant 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bella Participant\",\n  \"email\": \"{{p2Email}}\",\n  \"password\": \"password123\",\n  \"role\": \"PARTICIPANT\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set(\"p2Email\", \"p2\" + Date.now() + \"@example.com\");"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"password is not returned\", () => pm.expect(JSON.stringify(j)).to.not.include(\"password\"));",
+                  "pm.collectionVariables.set(\"p2Id\", j.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Register Participant 3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Chen Participant\",\n  \"email\": \"{{p3Email}}\",\n  \"password\": \"password123\",\n  \"role\": \"PARTICIPANT\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set(\"p3Email\", \"p3\" + Date.now() + \"@example.com\");"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"password is not returned\", () => pm.expect(JSON.stringify(j)).to.not.include(\"password\"));",
+                  "pm.collectionVariables.set(\"p3Id\", j.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Register Judge",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jack Judge\",\n  \"email\": \"{{judgeEmail}}\",\n  \"password\": \"password123\",\n  \"role\": \"JUDGE\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set(\"judgeEmail\", \"judge\" + Date.now() + \"@example.com\");"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"password is not returned\", () => pm.expect(JSON.stringify(j)).to.not.include(\"password\"));",
+                  "pm.collectionVariables.set(\"judgeId\", j.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Register - duplicate email (409)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Dup\",\n  \"email\": \"{{orgEmail}}\",\n  \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 409\", () => pm.response.to.have.status(409));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Register - invalid body (400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"A\",\n  \"email\": \"not-an-email\",\n  \"password\": \"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"lists field errors\", () => pm.expect(pm.response.json().errors.length).to.eql(3));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login Organizer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{orgEmail}}\",\n  \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"returns JWT\", () => pm.expect(j.accessToken).to.be.a(\"string\"));",
+                  "pm.collectionVariables.set(\"orgToken\", j.accessToken);",
+                  "pm.collectionVariables.set(\"token\", j.accessToken);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login Participant 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{p1Email}}\",\n  \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"returns JWT\", () => pm.expect(j.accessToken).to.be.a(\"string\"));",
+                  "pm.collectionVariables.set(\"p1Token\", j.accessToken);",
+                  "pm.collectionVariables.set(\"token\", j.accessToken);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login Participant 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{p2Email}}\",\n  \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"returns JWT\", () => pm.expect(j.accessToken).to.be.a(\"string\"));",
+                  "pm.collectionVariables.set(\"p2Token\", j.accessToken);",
+                  "pm.collectionVariables.set(\"token\", j.accessToken);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login Participant 3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{p3Email}}\",\n  \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"returns JWT\", () => pm.expect(j.accessToken).to.be.a(\"string\"));",
+                  "pm.collectionVariables.set(\"p3Token\", j.accessToken);",
+                  "pm.collectionVariables.set(\"token\", j.accessToken);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login Judge",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{judgeEmail}}\",\n  \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"returns JWT\", () => pm.expect(j.accessToken).to.be.a(\"string\"));",
+                  "pm.collectionVariables.set(\"judgeToken\", j.accessToken);",
+                  "pm.collectionVariables.set(\"token\", j.accessToken);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login - wrong password (401)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{orgEmail}}\",\n  \"password\": \"wrong-password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 401\", () => pm.response.to.have.status(401));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2. Hackathons",
+      "item": [
+        {
+          "name": "Create Hackathon",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"AI Innovation Hackathon\",\n  \"description\": \"Build innovative AI products\",\n  \"location\": \"Almaty\",\n  \"startDate\": \"2026-12-10T09:00:00Z\",\n  \"endDate\": \"2026-12-12T18:00:00Z\",\n  \"maxTeamSize\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{orgToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"organizerId comes from token\", () => pm.expect(j.organizerId).to.eql(Number(pm.collectionVariables.get(\"orgId\"))));",
+                  "pm.test(\"default status UPCOMING\", () => pm.expect(j.status).to.eql(\"UPCOMING\"));",
+                  "pm.collectionVariables.set(\"hackathonId\", j.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Hackathon - invalid dates (400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"AI Innovation Hackathon\",\n  \"description\": \"Build innovative AI products\",\n  \"location\": \"Almaty\",\n  \"startDate\": \"2026-12-12T09:00:00Z\",\n  \"endDate\": \"2026-12-10T09:00:00Z\",\n  \"maxTeamSize\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{orgToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 400\", () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Hackathon - as participant (403)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"AI Innovation Hackathon\",\n  \"description\": \"Build innovative AI products\",\n  \"location\": \"Almaty\",\n  \"startDate\": \"2026-12-10T09:00:00Z\",\n  \"endDate\": \"2026-12-12T18:00:00Z\",\n  \"maxTeamSize\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p1Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 403\", () => pm.response.to.have.status(403));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Hackathon - no token (401)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"AI Innovation Hackathon\",\n  \"description\": \"Build innovative AI products\",\n  \"location\": \"Almaty\",\n  \"startDate\": \"2026-12-10T09:00:00Z\",\n  \"endDate\": \"2026-12-12T18:00:00Z\",\n  \"maxTeamSize\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 401\", () => pm.response.to.have.status(401));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get All Hackathons",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons?page=1&limit=10&status=UPCOMING",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "status",
+                  "value": "UPCOMING"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"has items\", () => pm.expect(pm.response.json().items.length).to.be.above(0));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Hackathon By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"matches id\", () => pm.expect(pm.response.json().id).to.eql(Number(pm.collectionVariables.get(\"hackathonId\"))));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Hackathon - not found (404)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/999999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "999999"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 404\", () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Hackathon (PATCH)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"ACTIVE\",\n  \"location\": \"Astana\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{orgToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"updated\", () => pm.expect(pm.response.json().status).to.eql(\"ACTIVE\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Hackathon - invalid dates (400)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"endDate\": \"2020-01-01T00:00:00Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{orgToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 400\", () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Assign Judge",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/judges",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}",
+                "judges"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"judgeId\": {{judgeId}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{orgToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Assign Judge - already assigned (409)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/judges",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}",
+                "judges"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"judgeId\": {{judgeId}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{orgToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 409\", () => pm.response.to.have.status(409));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Assign Judge - user is not a judge (400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/judges",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}",
+                "judges"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"judgeId\": {{p1Id}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{orgToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 400\", () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3. Teams",
+      "item": [
+        {
+          "name": "Create Team",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/teams",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}",
+                "teams"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Code Warriors\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p1Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"creator is first member\", () => pm.expect(j.members[0].userId).to.eql(Number(pm.collectionVariables.get(\"p1Id\"))));",
+                  "pm.collectionVariables.set(\"team1Id\", j.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Team - hackathon not found (404)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/999999/teams",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "999999",
+                "teams"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Ghosts\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p2Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 404\", () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Team - already in a team (409)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/teams",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}",
+                "teams"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Second Team\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p1Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 409\", () => pm.response.to.have.status(409));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Teams of Hackathon",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/teams",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}",
+                "teams"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"one team\", () => pm.expect(pm.response.json().length).to.eql(1));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Add Member",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/teams/{{team1Id}}/members",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "teams",
+                "{{team1Id}}",
+                "members"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": {{p2Id}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p1Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"2 members\", () => pm.expect(pm.response.json().members.length).to.eql(2));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Add Member - team is full (409)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/teams/{{team1Id}}/members",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "teams",
+                "{{team1Id}}",
+                "members"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": {{p3Id}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p1Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 409\", () => pm.response.to.have.status(409));",
+                  "pm.test(\"message\", () => pm.expect(pm.response.json().message).to.eql(\"Team is already full\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Add Member - user is a judge (400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/teams/{{team1Id}}/members",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "teams",
+                "{{team1Id}}",
+                "members"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": {{judgeId}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p1Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 400\", () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Remove Member",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/teams/{{team1Id}}/members/{{p2Id}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "teams",
+                "{{team1Id}}",
+                "members",
+                "{{p2Id}}"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p2Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Remove Member - not a member (404)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/teams/{{team1Id}}/members/{{p2Id}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "teams",
+                "{{team1Id}}",
+                "members",
+                "{{p2Id}}"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p2Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 404\", () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Team 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/teams",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}",
+                "teams"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Byte Masters\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p3Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set(\"team2Id\", pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4. Projects",
+      "item": [
+        {
+          "name": "Create Project (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/teams/{{team1Id}}/project",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "teams",
+                "{{team1Id}}",
+                "project"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Smart Planner\",\n  \"description\": \"Planner that uses AI to schedule tasks\",\n  \"repositoryUrl\": \"https://github.com/team/smart-planner\",\n  \"demoUrl\": \"https://smart-planner.example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p1Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set(\"project1Id\", pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Project (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/teams/{{team1Id}}/project",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "teams",
+                "{{team1Id}}",
+                "project"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Smart Planner v2\",\n  \"description\": \"Planner that uses AI to schedule tasks\",\n  \"repositoryUrl\": \"https://github.com/team/smart-planner\",\n  \"demoUrl\": \"https://smart-planner.example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p1Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"title updated\", () => pm.expect(pm.response.json().title).to.eql(\"Smart Planner v2\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Project - not a team member (403)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/teams/{{team1Id}}/project",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "teams",
+                "{{team1Id}}",
+                "project"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Smart Planner\",\n  \"description\": \"Planner that uses AI to schedule tasks\",\n  \"repositoryUrl\": \"https://github.com/team/smart-planner\",\n  \"demoUrl\": \"https://smart-planner.example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p3Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 403\", () => pm.response.to.have.status(403));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Project - invalid URL (400)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/teams/{{team1Id}}/project",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "teams",
+                "{{team1Id}}",
+                "project"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Smart Planner\",\n  \"description\": \"Planner that uses AI to schedule tasks\",\n  \"repositoryUrl\": \"https://github.com/team/smart-planner\",\n  \"demoUrl\": \"not-a-url\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p1Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 400\", () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Project for Team 2 (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/teams/{{team2Id}}/project",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "teams",
+                "{{team2Id}}",
+                "project"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Smart Planner\",\n  \"description\": \"Planner that uses AI to schedule tasks\",\n  \"repositoryUrl\": \"https://github.com/team/smart-planner\",\n  \"demoUrl\": \"https://smart-planner.example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p3Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set(\"project2Id\", pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Project Reviews (empty)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/projects/{{project1Id}}/reviews",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{{project1Id}}",
+                "reviews"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"no reviews yet\", () => pm.expect(pm.response.json().count).to.eql(0));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5. Reviews & Statistics",
+      "item": [
+        {
+          "name": "Create Review",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/projects/{{project1Id}}/reviews",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{{project1Id}}",
+                "reviews"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"score\": 9,\n  \"comment\": \"Excellent technical implementation\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{judgeToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Review - duplicate (409)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/projects/{{project1Id}}/reviews",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{{project1Id}}",
+                "reviews"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"score\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{judgeToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 409\", () => pm.response.to.have.status(409));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Review - not a judge (403)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/projects/{{project1Id}}/reviews",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{{project1Id}}",
+                "reviews"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"score\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p1Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 403\", () => pm.response.to.have.status(403));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Review - score out of range (400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/projects/{{project2Id}}/reviews",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{{project2Id}}",
+                "reviews"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"score\": 11\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{judgeToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 400\", () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Review - project not found (404)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/projects/999999/reviews",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "999999",
+                "reviews"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"score\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{judgeToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 404\", () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Review for Team 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/projects/{{project2Id}}/reviews",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{{project2Id}}",
+                "reviews"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"score\": 7,\n  \"comment\": \"Good idea, needs polish\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{judgeToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Project Reviews",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/projects/{{project1Id}}/reviews",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{{project1Id}}",
+                "reviews"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "const j = pm.response.json();",
+                  "pm.test(\"1 review, avg 9\", () => { pm.expect(j.count).to.eql(1); pm.expect(j.averageScore).to.eql(9); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Leaderboard",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}/leaderboard",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}",
+                "leaderboard"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "const lb = pm.response.json().leaderboard;",
+                  "pm.test(\"ranked by average score\", () => { pm.expect(lb[0].rank).to.eql(1); pm.expect(lb[0].team).to.eql(\"Code Warriors\"); pm.expect(lb[0].averageScore).to.eql(9); pm.expect(lb[1].averageScore).to.eql(7); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "6. Cleanup",
+      "item": [
+        {
+          "name": "Delete Hackathon - not the organizer (403)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{p1Token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 403\", () => pm.response.to.have.status(403));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Hackathon",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{orgToken}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Hackathon after delete (404)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/hackathons/{{hackathonId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "hackathons",
+                "{{hackathonId}}"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 404\", () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000/api"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
